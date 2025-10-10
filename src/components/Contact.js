@@ -19,11 +19,17 @@ export default function Contact() {
 
   function handleSubmit(e) {
   e.preventDefault();
-  fetch("http://localhost:3000/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(form)
+  fetch('https://raja-varun-portfolio-1.onrender.com/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: form.name,
+      email: form.email,
+      subject: form.subject,
+      message: form.message
+    })
   })
+
     .then(res => res.json())
     .then(data => {
       if (data.status === "ok") setSubmitted(true);
