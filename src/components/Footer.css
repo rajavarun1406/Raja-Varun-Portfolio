@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&display=swap');
+
+.footer-main {
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  color: #223336;
+  padding: 24px 0 12px 0;
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 70px;
+  margin-bottom: 14px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  align-items: flex-start;
+}
+
+.footer-label {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #223336;
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+
+.footer-value {
+  font-size: 1rem;
+  color: #223336;
+  font-family: inherit;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.footer-value a {
+  color: #223336;
+  text-decoration: underline;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+/* Black background for socials row, icon only, no text */
+.footer-social-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #222;
+  border-radius: 12px;
+  padding: 13px 28px;
+}
+
+.footer-social-icon {
+  height: 34px;
+  width: 34px;
+  filter: invert(100%);
+  transition: transform 0.13s;
+}
+
+.footer-social-icon:hover {
+  transform: scale(1.12);
+  filter: invert(80%) sepia(18%) saturate(199%) hue-rotate(59deg) brightness(87%) contrast(84%);
+}
+
+/* Copyright Bar */
+.footer-copyright {
+  text-align: center;
+  color: #223336;
+  font-size: 1.08rem;
+  font-family: 'EB Garamond', Garamond, serif;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  margin-top: 16px;
+}
+
+/* Responsive columns */
+@media (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .footer-section {
+    min-width: unset;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}

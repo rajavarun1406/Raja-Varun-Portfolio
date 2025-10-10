@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&display=swap');
+
+/* ===== HEADER SECTION ===== */
+.site-header {
+  background: #fff;
+  width: 100%;
+  border-bottom: none;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 32px;   /* Comfortable left gap */
+  padding-top: 18px;
+}
+
+.site-title,
+.site-subtitle {
+  font-family: 'EB Garamond', Garamond, serif;
+  color: #223336;                  /* Same color for both */
+  text-align: left;
+  margin-left: 0;
+}
+
+.site-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  margin-bottom: 4px;
+}
+
+.site-subtitle {
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+/* ==== NAVBAR SECTION (unchanged, keep as is) ==== */
+.navbar-main {
+  background: #fff;
+  border-bottom: 2px solid #d8e0d3;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  font-family: 'EB Garamond', Garamond, serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0;
+}
+
+.navbar-list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.navbar-list li {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+
+.navbar-link {
+  color: #223336;
+  text-decoration: none;
+  font-family: inherit;
+  background: transparent;
+  padding: 0 1px;
+  transition: color 0.17s, border-bottom 0.17s;
+  border-bottom: none;
+  font-size: inherit;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: #4f7b42;
+  border-bottom: 2px solid #4f7b42;
+}
+
+.navbar-divider {
+  color: #c3d0c1;
+  font-size: 1.08rem;
+  margin: 0 8px;
+  align-self: center;
+}
+
+/* EMAIL: always right, less opaque, with internal gap to edge */
+.navbar-email {
+  color: #585958;
+  font-size: 0.96rem;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  margin-left: auto;       /* Reasonable gap from navbar-list */
+  padding-right: 8px;     /* Keeps away from page edge */
+  opacity: 0.53;
+  white-space: nowrap;
+}
+
+.navbar-email a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .header-container { padding-left: 5vw; }
+  .site-title { font-size: 1.35rem; }
+  .site-subtitle { font-size: 0.93rem; }
+  .navbar-main { flex-direction: column; align-items: flex-start; padding: 0 10px; }
+  .navbar-list { gap: 6px; font-size: 0.97rem; }
+  .navbar-email { 
+    margin-left: 0; 
+    margin-top: 8px; 
+    font-size: 0.93rem;
+    padding-right: 0;
+  }
+}

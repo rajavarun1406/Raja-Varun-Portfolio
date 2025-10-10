@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&display=swap');
+
+/* Layout */
+.contact-main {
+  background: #fff;
+  min-height: 64vh;
+  padding: 38px 0 0 0;
+}
+.contact-title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'EB Garamond', Garamond, serif;
+  color: #374232;
+  margin-bottom: 22px;
+  letter-spacing: 1.2px;
+}
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 950px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 6vw 36px 6vw;
+  box-shadow: 0 2px 14px rgba(30,40,30,0.06);
+}
+
+/* Form */
+.contact-form {
+  flex: 1;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-row input {
+  flex: 1 1 0;
+  min-width: 0;          /* prevents overflow issues */
+  box-sizing: border-box;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #fafcff;
+  border: 1px solid #dbe2ce;
+  border-radius: 5px;
+  padding: 9px 12px;
+  font-size: 0.98rem;
+  font-family: 'EB Garamond', Garamond, serif;
+  color: #253325;
+}
+.contact-form button {
+  margin-top: 10px;
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 1rem;
+  background: #e9efe6;
+  color: #465546;
+  border: 1.2px solid #afc9af;
+  border-radius: 6px;
+  padding: 8px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.16s;
+}
+.contact-form button:hover {
+  background: #d8e5db;
+  color: #324b31;
+}
+.thankyou-msg {
+  margin-top: 7px;
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 0.89rem;
+  color: #438a5e;
+}
+
+/* Divider AND spacing */
+.contact-divider {
+  width: 2px;
+  background: #c9d4c3;
+  height: 240px;
+  margin: 0 108px;
+  align-self: stretch;
+}
+
+/* Contact details card */
+.contact-details {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 0.92rem;
+  min-width: 220px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(.47,.15,.61,.97), transform 0.4s;
+  color: #374232;
+  font-family: 'EB Garamond', Garamond, serif;
+  padding-left: 25px;
+}
+
+.contact-details.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-name {
+  font-size: 1.32rem;
+  font-weight: 700;
+  margin-bottom: 9px;
+  color: #374232;
+}
+.contact-email {
+  font-size: 1.04rem;
+  color: #464e39;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2vw 32px 2vw;
+  }
+  .contact-divider {
+    display: none;
+  }
+  .contact-details {
+    min-width: 100%;
+    margin-top: 26px;
+    font-size: 1rem;
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+}
