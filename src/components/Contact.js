@@ -18,22 +18,18 @@ export default function Contact() {
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
-    fetch(`${process.env.REACT_APP_API_BASE}/api/contact`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: form.name,
-        email: form.email,
-        message: form.message,
-        subject: form.subject
-      })
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === "ok") setSubmitted(true);
-      });
-  }
+  e.preventDefault();
+  fetch("http://localhost:3000/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(form)
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "ok") setSubmitted(true);
+    });
+}
+
 
   return (
     <div className="contact-main">
