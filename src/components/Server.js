@@ -7,7 +7,10 @@ const PORT = 3000;
 
 // Enable JSON and CORS
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://raja-varun-portfolio.vercel.app"
+}));
+
 
 // Configure Nodemailer transporter (Use an app password for Gmail - see Google instructions)
 const transporter = nodemailer.createTransport({
