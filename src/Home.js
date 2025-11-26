@@ -1,92 +1,86 @@
 import React from "react";
-import "./index.css"; // Ensure global styles
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import "./index.css";
 
 function Home() {
   return (
-    <div
-      style={{
-        background: "#e7e8e3",
-        minHeight: "440px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "54px 0",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "980px",
-          padding: "40px 48px",
-          background: "#fff",
-          borderRadius: "7px",
-          boxShadow: "0 2px 12px rgba(33,42,32,.06)",
-          display: "flex",
-          alignItems: "center",
-        }}
+    <div className="section" style={{ minHeight: "90vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <motion.div 
+        className="container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "40px" }}
       >
         {/* Left content: Text */}
-        <div style={{ flex: 1, paddingRight: "36px" }}>
-          <h1
-            style={{
-              fontSize: "3rem",
-              fontWeight: "700",
-              color: "#223336",
-              fontFamily: "EB Garamond, Garamond, serif",
-              marginBottom: "16px",
-              textAlign: "left",
-              letterSpacing: "0.7px",
-            }}
+        <div style={{ flex: 1, minWidth: "300px" }}>
+          <motion.h1
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            style={{ fontSize: "3.5rem", marginBottom: "16px" }}
           >
             Welcome
-          </h1>
-          <h2
-            style={{
-              fontFamily: "EB Garamond, Garamond, serif",
-              fontSize: "2.05rem",
-              fontWeight: "700",
-              color: "#000000ff",
-              marginTop: "0",
-              marginBottom: "8px",
-              textAlign: "left",
-              letterSpacing: "0.6px",
-            }}
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            style={{ fontSize: "2.5rem", color: "var(--text-secondary)", marginBottom: "24px" }}
           >
             I'm Raja Varun Kurapati
-          </h2>
-          <p
-            style={{
-              fontSize: "1.18rem",
-              color: "#444",
-              maxWidth: "700px",
-              margin: "0",
-              textAlign: "left",
-              fontFamily: '"EB Garamond", Garamond, serif',
-              lineHeight: "1.6",
-            }}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            style={{ fontSize: "1.2rem", color: "var(--text-secondary)", marginBottom: "32px", maxWidth: "600px" }}
           >
             I thrive on cracking complex challenges and bringing intelligent, data-powered solutions to life.
             With hands-on expertise in machine learning, automation and full-stack development.
             I'm dedicated to inspiring innovation, empowering users, and growing alongside dynamic teams.
-          </p>
+          </motion.p>
+          
+          <motion.div 
+            style={{ display: "flex", gap: "20px" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            <a href="https://github.com/rajavarun1406" target="_blank" rel="noopener noreferrer" style={{ fontSize: "2rem", color: "var(--text-primary)" }}>
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/raja-varun-kurapati-001a181a0/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "2rem", color: "var(--secondary-color)" }}>
+              <FaLinkedin />
+            </a>
+            <a href="mailto:rajavarunkurapati@gmail.com" style={{ fontSize: "2rem", color: "var(--primary-color)" }}>
+              <FaEnvelope />
+            </a>
+          </motion.div>
         </div>
+
         {/* Right content: Image */}
-        <div style={{ flexShrink: 0, width: "220px" }}>
+        <motion.div 
+          style={{ flexShrink: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
           <img
             src={process.env.PUBLIC_URL + "/raja.png.bmp"}
             alt="Raja Varun Kurapati"
             style={{
-              width: "200px",
-              height: "240px",
+              width: "280px",
+              height: "340px",
               objectFit: "cover",
-              borderRadius: "12px",
-              boxShadow: "0 2px 12px rgba(33,42,32,.10)",
-              marginLeft: "auto",
-              display: "block",
+              borderRadius: "20px",
+              boxShadow: "var(--shadow-lg)",
+              border: "4px solid var(--surface-color)"
             }}
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

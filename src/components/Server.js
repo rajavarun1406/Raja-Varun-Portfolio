@@ -3,7 +3,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const app = express();
-const PORT = 3000;
+const PORT = 5000; // Changed to 5000 to avoid conflict with React
 
 // Enable JSON and CORS
 app.use(express.json());
@@ -33,6 +33,7 @@ app.post("/api/contact", async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ status: "ok" });
   } catch (err) {
+    console.error("Error sending email:", err);
     res.status(500).json({ status: "error", error: err.toString() });
   }
 });

@@ -13,14 +13,16 @@
   align-items: flex-start;
   max-width: 1100px;
   margin: 0 auto;
-  padding-left: 32px;   /* Comfortable left gap */
+  padding-left: 32px;
+  /* Comfortable left gap */
   padding-top: 18px;
 }
 
 .site-title,
 .site-subtitle {
   font-family: 'EB Garamond', Garamond, serif;
-  color: #223336;                  /* Same color for both */
+  color: #223336;
+  /* Same color for both */
   text-align: left;
   margin-left: 0;
 }
@@ -42,7 +44,7 @@
 .navbar-main {
   background: #fff;
   border-bottom: 2px solid #d8e0d3;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   width: 100%;
   display: flex;
   align-items: center;
@@ -102,8 +104,10 @@
   font-family: inherit;
   font-weight: 600;
   letter-spacing: 0.7px;
-  margin-left: auto;       /* Reasonable gap from navbar-list */
-  padding-right: 8px;     /* Keeps away from page edge */
+  margin-left: auto;
+  /* Reasonable gap from navbar-list */
+  padding-right: 8px;
+  /* Keeps away from page edge */
   opacity: 0.53;
   white-space: nowrap;
 }
@@ -115,15 +119,93 @@
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
-  .header-container { padding-left: 5vw; }
-  .site-title { font-size: 1.35rem; }
-  .site-subtitle { font-size: 0.93rem; }
-  .navbar-main { flex-direction: column; align-items: flex-start; padding: 0 10px; }
-  .navbar-list { gap: 6px; font-size: 0.97rem; }
-  .navbar-email { 
-    margin-left: 0; 
-    margin-top: 8px; 
+  .header-container {
+    padding-left: 5vw;
+  }
+
+  .site-title {
+    font-size: 1.35rem;
+  }
+
+  .site-subtitle {
     font-size: 0.93rem;
-    padding-right: 0;
+  }
+}
+
+/* Mobile Menu Styles */
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+    margin-left: auto;
+    /* Push to right */
+  }
+
+  .navbar-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--surface-color);
+    box-shadow: var(--shadow-md);
+    padding: 1rem 0;
+    z-index: 99;
+  }
+
+  .navbar-list.active {
+    display: flex;
+  }
+
+  .navbar-list li {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .navbar-email {
+    display: none;
+    /* Hide default email position on mobile */
+  }
+
+  .navbar-email.active {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background: var(--surface-color);
+    position: absolute;
+    top: calc(100% + 280px);
+    /* Position below the list (approx height) - simplistic approach */
+    /* Better approach: just put it in the flow if structure allows, or absolute below list */
+    border-top: 1px solid #eee;
+  }
+
+  /* Re-structuring for better flow: 
+     Actually, since navbar-list and navbar-email are siblings, 
+     we can make the container wrap them.
+  */
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+
+  .navbar-list.active {
+    position: static;
+    /* Flow naturally in the wrapped container */
+    box-shadow: none;
+    border-top: 1px solid #eee;
+  }
+
+  .navbar-email.active {
+    position: static;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
   }
 }

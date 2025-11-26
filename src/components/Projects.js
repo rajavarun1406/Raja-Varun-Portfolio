@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -39,38 +40,60 @@ const projects = [
       "Used Tableau Prep Builder for preprocessing, improving data quality and insight delivery.",
     ],
     tools: "Tableau, Tableau Prep, Python"
-  },
-  {
-    title: "Leaf Disease Detection",
-    subtitle: "Deep Learning Project • Amrita School of Engineering",
-    description: [
-      "CNN model achieved 99.2% accuracy in disease prediction for tomato, potato, and corn crops.",
-      "Developed TensorFlow pipeline for detecting diseases across 38 classes using Kaggle with 87,000+ images.",
-    ],
-    tools: "Python, TensorFlow, Kaggle"
   }
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
 export default function Projects() {
   return (
-    <section className="projects-section">
-      <h2 >Projects</h2>
-      <div className="projects-grid">
-        {projects.map((proj, idx) => (
-          <div key={idx} className="project-card">
-            <div className="project-title">{proj.title}</div>
-            <div className="project-subtitle">{proj.subtitle}</div>
-            {/* <div className="project-meta">{proj.university} • {proj.date}</div> */}
-            <ul className="project-desc-list">
-              {proj.description.map((desc, i) => (
-                <li key={i}>{desc}</li>
-              ))}
-            </ul>
-            <div className="project-tech">
-              <span>Tools Used:</span> {proj.tools}
-            </div>
-          </div>
-        ))}
+    <section className="section" style={{ background: 'var(--background-color)' }}>
+      <div className="container">
+        <motion.h2
+          className="text-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ fontSize: '2.5rem', marginBottom: '3rem' }}
+        >
+          Projects
+        </motion.h2>
+        <motion.div
+          className="projects-grid"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
+        >
+          {projects.map((proj, idx) => (
+            <motion.div key={idx} className="card" variants={item}>
+              <div className="project-title" style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--primary-color)' }}>{proj.title}</div>
+              <div className="project-subtitle" style={{ fontSize: '1rem', fontStyle: 'italic', color: 'var(--secondary-color)', marginBottom: '1rem' }}>{proj.subtitle}</div>
+              <ul className="project-desc-list" style={{ paddingLeft: '1.2rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
+                {proj.description.map((desc, i) => (
+                  <li key={i} style={{ marginBottom: '0.5rem' }}>{desc}</li>
+                ))}
+              </ul>
+              <div className="project-tech" style={{ fontSize: '0.9rem', color: 'var(--text-primary)', fontWeight: '500' }}>
+                <span style={{ color: 'var(--primary-color)' }}>Tools Used:</span> {proj.tools}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

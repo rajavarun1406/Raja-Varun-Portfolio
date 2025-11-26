@@ -1,49 +1,78 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './HeaderNavbar.css';
 
 export default function Navbar() {
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Projects', path: '/projects' },
     { label: 'Resume', path: '/resume' },
-    { label: 'Github', path: 'https://github.com/rajavarun1406', external: true },
     { label: 'Certifications', path: '/certifications' },
     { label: 'Contact', path: '/contact' }
   ];
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <nav className="navbar-main">
-      <ul className="navbar-list">
-        {navItems.map((item, idx) => (
-          <React.Fragment key={item.label}>
-            <li>
-              {item.external ? (
-                <a
-                  href={item.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
+    <nav className="navbar-main" style={{ background: 'var(--surface-color)', boxShadow: 'var(--shadow-sm)', padding: '1rem 2rem', position: 'sticky', top: 0, zIndex: 100 }}>
+      <div className="navbar-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+
+        {/* Mobile Toggle Button */}
+        <div className="navbar-toggle" onClick={toggleMenu}>
+          {isOpen ? <FaTimes size={24} color="var(--primary-color)" /> : <FaBars size={24} color="var(--primary-color)" />}
+        </div>
+
+        {/* Desktop Menu */}
+        <ul className={`navbar-list ${isOpen ? 'active' : ''}`}>
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <li key={item.label} style={{ position: 'relative' }}>
+                <Link
+                  to={item.path}
                   className="navbar-link"
+                  onClick={() => setIsOpen(false)} // Close menu on click
+                  style={{
+                    color: isActive ? 'var(--primary-color)' : 'var(--text-secondary)',
+                    fontWeight: isActive ? 600 : 500,
+                    fontSize: '1.1rem',
+                    padding: '0.5rem 0',
+                    display: 'block'
+                  }}
                 >
                   {item.label}
-                </a>
-              ) : (
-                <Link to={item.path} className="navbar-link">
-                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="underline"
+                      className="nav-underline"
+                      style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '3px',
+                        background: 'var(--primary-color)',
+                        borderRadius: '2px'
+                      }}
+                    />
+                  )}
                 </Link>
-              )}
-            </li>
-            {idx < navItems.length - 1 && (
-              <span className="navbar-divider">|</span>
-            )}
-          </React.Fragment>
-        ))}
-      </ul>
-      <div className="navbar-email">
-        <a href="mailto:rajavarun.kurapati@gmail.com">
-          rajavarun.kurapati@gmail.com
-        </a>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className={`navbar-email ${isOpen ? 'active' : ''}`}>
+          <a href="mailto:rajavarun.kurapati@gmail.com" style={{ color: 'var(--primary-color)', fontWeight: 'bold', textDecoration: 'none' }}>
+            rajavarun.kurapati@gmail.com
+          </a>
+        </div>
       </div>
     </nav>
   );
