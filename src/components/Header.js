@@ -7,8 +7,8 @@ export default function Header() {
       <div className="header-container">
         <h1 className="site-title">Raja Varun Kurapati</h1>
         <div className="site-subtitle">
-          Graduate Student @ Arizona State University<br />
-          Information Technology, Data Analyst Intern @ Lidvizion
+          Software & Full-Stack Engineer | ML, Data Analytics & Backend Systems<br />
+          Information Technology, Graduate Student @ Arizona State University
         </div>
       </div>
     </header>
