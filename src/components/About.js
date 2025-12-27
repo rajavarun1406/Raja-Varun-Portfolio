@@ -56,11 +56,10 @@ export default function About() {
               About me...
             </h2>
             <p style={{ fontSize: "1.1rem", color: "var(--text-secondary)", lineHeight: "1.8", maxWidth: "600px" }}>
-              Data engineering and computer vision enthusiast with a proven record of delivering scalable, high-impact solutions across industries. <br /><br />
-              Strong experience building automated workflows, architecting machine learning systems & designing cloud-integrated web applications.
-              Adept at translating complex data into actionable insights and building full-stack products that drive measurable results. <br /><br />
-              Skilled in collaborating with cross-functional teams to optimize analytics, automate business processes & deliver intuitive user experiences.
-              Passionate about continuous learning, mentoring peers & driving innovation with advanced engineering and analytics.
+              Multi-disciplinary technologist with a track record of building data-driven, production-ready solutions across analytics, software & business domains. <br /><br />
+              Experienced in designing automated data workflows, developing end-to-end analytics and machine learning systems and shipping full-stack applications that integrate seamlessly with cloud platforms. <br /><br />
+              Comfortable partnering with stakeholders to clarify requirements, optimize business processes and turn complex data into clear, actionable stories that support better decisions and user experiences. <br /><br />
+
             </p>
           </div>
         </motion.div>
@@ -78,13 +77,11 @@ export default function About() {
             My Story
           </h2>
           <p style={{ fontSize: "1.1rem", color: "var(--text-secondary)", lineHeight: "1.8" }}>
-            For the past Six months, I have been growing as a Business Data Analyst intern with Lidvizion, where I design and automate intelligent content workflows, develop AI-powered pipelines and deploy computer vision prototypes for real-world problems.
-            My role lets me blend data engineering, web development and client-focused analytics ensuring each project is both scalable and impactful.<br /><br />
+            With one year as a Business Data Analyst at Lid Vizion, LLC, I design intelligent automation workflows, develop AI-driven data pipelines, and deploy computer vision applications that solve real business challenges. This role combines data engineering, full-stack development and analytics to create scalable tools that deliver tangible value. Earlier, during 1.5 years as a Full Stack Engineer at Infosys in India, I built and maintained production web applications using React, Node.js and REST APIs while collaborating across teams to ship reliable features. <br /><br />
 
-            Currently, I am pursuing my Master’s in Information Technology at Arizona State University, deepening my expertise across cloud workflows, machine learning and data science.
-            My undergraduate journey was at Amrita School of Engineering, Chennai, where I earned my Bachelor’s in Computer Science, laying a strong foundation in deep learning and large-scale data solutions.<br /><br />
+            I recently completed my Master’s in Information Technology at Arizona State University, advancing skills in cloud computing, machine learning and large-scale data systems, building on my Bachelor’s in Computer Science from Amrita School of Engineering, Chennai. <br /><br />
 
-            Beyond work and studies, I thrive on energetic pursuits and creativity. Volleyball keeps me active; hiking and road trips spark my sense of adventure; and I always enjoy opportunities for teamwork, leadership and exploring new places.<br /><br />
+            Beyond work and studies, I thrive on energetic pursuits and creativity. Volleyball keeps me active; hiking and road trips spark my sense of adventure and I always enjoy opportunities for teamwork, leadership and exploring new places. <br /><br />
 
             Throughout my journey, curiosity and a drive for impact have led me from university labs to collaborative industry environments always striving to learn more, build smarter and connect technology with people’s real needs.
           </p>

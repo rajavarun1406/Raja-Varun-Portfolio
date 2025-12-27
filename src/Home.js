@@ -6,7 +6,7 @@ import "./index.css";
 function Home() {
   return (
     <div className="section" style={{ minHeight: "90vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <motion.div 
+      <motion.div
         className="container"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -37,12 +37,13 @@ function Home() {
             transition={{ delay: 0.6, duration: 0.8 }}
             style={{ fontSize: "1.2rem", color: "var(--text-secondary)", marginBottom: "32px", maxWidth: "600px" }}
           >
-            I thrive on cracking complex challenges and bringing intelligent, data-powered solutions to life.
-            With hands-on expertise in machine learning, automation and full-stack development.
-            I'm dedicated to inspiring innovation, empowering users, and growing alongside dynamic teams.
+            I thrive on solving intricate problems with intelligent, data-driven solutions that deliver real impact.
+            With proven expertise in machine learning, automation workflows, and full-stack engineering, I craft scalable tools that empower teams and optimize business outcomes. <br /><br />
+            Passionate about turning data into actionable insights, I excel at bridging technical innovation with user needs building everything from AI pipelines to responsive web applications.
+            Committed to collaborative growth, I inspire teams to push boundaries and achieve excellence together.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             style={{ display: "flex", gap: "20px" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,14 +62,14 @@ function Home() {
         </div>
 
         {/* Right content: Image */}
-        <motion.div 
+        <motion.div
           style={{ flexShrink: 0 }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           <img
-            src={process.env.PUBLIC_URL + "/raja.png.bmp"}
+            src={process.env.PUBLIC_URL + "/raja.jpeg"}
             alt="Raja Varun Kurapati"
             style={{
               width: "280px",
